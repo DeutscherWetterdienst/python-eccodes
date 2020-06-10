@@ -1,10 +1,17 @@
 # Python and ecCodes in a Docker container
 Python and [ECMWF ecCodes](https://github.com/ecmwf/eccodes) packaged in a Docker container to allow for easy processing of GRIB2 and BUFR files.
 
-# Usage
-The image ``deutscherwetterdienst/python-eccodes`` is availble on [Dockerhub](https://hub.docker.com/orgs/deutscherwetterdienst/python-eccodes). 
+[![Python Version](https://img.shields.io/badge/python-3.7.7-informational)](https://hub.docker.com/_/python)
+[![ecCodes Version](https://img.shields.io/badge/ecCodes-2.17.1-informational)](https://github.com/ecmwf/eccodes)
+[![ecCodes- Version](https://img.shields.io/static/v1?label=eccodes-python&message=latest&color=informational)](https://github.com/ecmwf/eccodes-python)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/deutscherwetterdienst/python-eccodes.svg)](https://hub.docker.com/r/deutscherwetterdienst/python-eccodes)
+[![Docker Pulls](https://img.shields.io/docker/pulls/deutscherwetterdienst/python-eccodes)](https://hub.docker.com/r/deutscherwetterdienst/python-eccodes)
 
-You can download GRIB2 files from DWD's Open Data file server: https://opendata.dwd.de/weather/nwp/ .
+# Usage
+The [Docker](https://www.docker.com) image ``deutscherwetterdienst/python-eccodes`` is availble on [Dockerhub](https://hub.docker.com/r/deutscherwetterdienst/python-eccodes). 
+
+## NWP forecast data
+You can download [DWD](https://www.dwd.de)'s [NWP forecast data](https://www.dwd.de/EN/ourservices/nwp_forecast_data/nwp_forecast_data.html) in [GRIB2](https://www.wmo.int/pages/prog/www/WMOCodes/Guides/GRIB/GRIB2_062006.pdf) format from DWD's Open Data file server at: https://opendata.dwd.de/weather/nwp/ .
 
 ## Example 1: Extract meta data from sample grib file
 To extract meta data from sample grib file ``icon_global.grib2`` included in the image run:
