@@ -166,11 +166,11 @@ ARG VCS_URL
 # --build-arg VERSION=`git tag`, e.g. '0.2.1'
 ARG VERSION
 LABEL org.label-schema.build-date=$BUILD_DATE \
-        org.label-schema.name="ecCodes" \
+        org.label-schema.name="python-eccodes" \
         org.label-schema.description="ecCodes is a package developed by ECMWF which provides an application programming interface and a set of tools for decoding and encoding messages in the following formats: WMO FM-92 GRIB edition 1 and edition 2, WMO FM-94 BUFR edition 3 and edition 4, WMO GTS abbreviated header (only decoding)" \
         org.label-schema.url="https://confluence.ecmwf.int/display/ECC" \
         org.label-schema.vcs-ref=$VCS_REF \
         org.label-schema.vcs-url=$VCS_URL \
-        org.label-schema.vendor="ECMWF - European Centre for Medium-Range Weather Forecasts" \
+        org.label-schema.vendor="DWD - Deutscher Wetterdienst" \
         org.label-schema.version=$VERSION \
         org.label-schema.schema-version="1.0"
