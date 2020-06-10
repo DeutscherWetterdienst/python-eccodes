@@ -23,12 +23,15 @@
 
 docker build \
 		--build-arg ECBUILD_VERSION=${ECBUILD_VERSION} \
-        --build-arg ECCODES_VERSION=${ECCODES_VERSION} \
+		--build-arg ECCODES_VERSION=${ECCODES_VERSION} \
+		--build-arg PYTHON_VERSION=${PYTHON_VERSION} \
 		--build-arg BUILD_DATE=${DATE} \
 		--build-arg VCS_URL=${SOURCE_URL} \
 		--build-arg VCS_REF=${SOURCE_COMMIT} \
 		--build-arg VERSION=${DOCKER_TAG} \
-        --file ${DOCKERFILE_PATH} \
-        --tag ${IMAGE_NAME} \
-		--tag ${DOCKER_REPO}:latest \
-        .
+		--file ${DOCKERFILE_PATH} \
+		--tag ${IMAGE_NAME} \
+		--tag ${IMAGE_NAME_LATEST} \
+		--tag ${IMAGE_NAME_LONG} \
+		--tag ${IMAGE_NAME_LONG_LATEST} \
+		.
