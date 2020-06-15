@@ -32,8 +32,8 @@ login:
 login-user-pass:
 	@docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
 
-push: login
-	@docker push ${DOCKER_REPO}
+push:
+	./hooks/post_push
 
 clean:
 	@docker rmi ${DOCKER_REPO}
