@@ -138,8 +138,8 @@ FROM debian:stable-slim
 COPY --from=build /usr/local/share/eccodes/ /usr/local/share/eccodes/
 COPY --from=build /usr/local/bin/ /usr/local/bin/
 COPY --from=build /usr/local/lib/ /usr/local/lib/
+COPY --from=build /usr/local/include/ /usr/local/include/
 COPY --from=build /src/eccodes-python/ /src/eccodes-python/
-
 # Ensure shared libs installed by the previous step are available.
 RUN set -ex \
     && /sbin/ldconfig
