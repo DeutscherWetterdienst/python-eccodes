@@ -30,7 +30,7 @@ edition      centre       date         dataType     gridType     stepRange    ty
 ## Example 2: Extract meta data from grib file on local hard drive
 If you have a local grib file ``some-file.grib2`` and you want to run ``grib_ls`` on this file:
 ```
-docker run --rm --mount type=bind,source="$(pwd)"/some-file.grib2,target=/my.grib2 deutscherwetterdienst/python-eccodes grib_ls /my.grib2
+docker run --rm --mount type=bind,source="$(pwd)"/,target=/local deutscherwetterdienst/python-eccodes grib_ls some-file.grib2
 ```
 Example output of ``grib_ls``:
 ```
