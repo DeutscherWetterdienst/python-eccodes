@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 # test
 TEST_CMD := python -m eccodes selfcheck
 
