@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 # test
 TEST_CMD := python -m eccodes selfcheck
 
@@ -10,7 +12,7 @@ SOURCE_TAG := ${shell . ./hooks/env && echo $$SOURCE_TAG}
 DOCKER_TAG := ${shell . ./hooks/env && echo $$DOCKER_TAG}
 IMAGE_NAME := ${shell . ./hooks/env && echo $$IMAGE_NAME}
 
-aall: build
+all: build
 
 .PHONY: build run run-interactive test login login-user-pass push clean
 

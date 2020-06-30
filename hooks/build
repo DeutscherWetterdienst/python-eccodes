@@ -24,6 +24,7 @@
 docker build \
 		--build-arg ECBUILD_VERSION=${ECBUILD_VERSION} \
 		--build-arg ECCODES_VERSION=${ECCODES_VERSION} \
+		--build-arg PYTHON_ECCODES_VERSION=${PYTHON_ECCODES_VERSION} \
 		--build-arg PYTHON_VERSION=${PYTHON_VERSION} \
 		--build-arg BUILD_DATE=${DATE} \
 		--build-arg VCS_URL=${SOURCE_URL} \
