@@ -155,6 +155,9 @@ ENV \
 CMD python -m eccodes selfcheck
 COPY ./samples /samples
 
+# Create a workdir that will be used as a mount point for local filesystem
+WORKDIR /local
+
 # METADATA
 # Build-time metadata as defined at http://label-schema.org
 # --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
