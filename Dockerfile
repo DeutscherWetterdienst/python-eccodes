@@ -90,7 +90,7 @@ RUN set -eux \
 
 # Install eccodes
 # requires ecbuild
-ARG ECCODES_VERSION=2.17.1
+ARG ECCODES_VERSION=2.18.0
 RUN set -eux \
     && mkdir -p /src/ \
     && cd /src \
@@ -107,11 +107,13 @@ RUN set -eux \
 # Install ecCodes
 # requires ecBuild
 # Install Python run-time dependencies (for eccodes)
+ARG PYTHON_ECCODES_VERSION=0.9.8
 RUN set -ex \
     && mkdir -p /src/ \
     && cd /src/ \
     && git clone https://github.com/ecmwf/eccodes-python \
     && cd eccodes-python \
+    && git checkout ${PYTHON_ECCODES_VERSION} \
     && pip install -e . \
     && python builder.py
 

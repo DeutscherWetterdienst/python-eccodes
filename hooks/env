@@ -6,7 +6,8 @@
 [ -n "$SOURCE_URL" ]        || SOURCE_URL=https://github.com/deutscherwetterdienst/python-eccodes
 [ -n "$DOCKER_REPO" ]       || DOCKER_REPO=deutscherwetterdienst/python-eccodes
 [ -n "$ECBUILD_VERSION" ]    || ECBUILD_VERSION="3.3.2"
-[ -n "$ECCODES_VERSION" ]    || ECCODES_VERSION="2.17.1"
+[ -n "$ECCODES_VERSION" ]    || ECCODES_VERSION="2.18.0"
+[ -n "$PYTHON_ECCODES_VERSION" ]    || PYTHON_ECCODES_VERSION="0.9.8"
 [ -n "$PYTHON_VERSION" ]    || PYTHON_VERSION="3.7.7"
 
 [ -n "$SOURCE_BRANCH" ]  || SOURCE_BRANCH=$(git symbolic-ref -q --short HEAD)
