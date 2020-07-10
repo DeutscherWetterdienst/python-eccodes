@@ -1,7 +1,7 @@
 # Python and ecCodes in a Docker container
 Python and [ECMWF ecCodes](https://github.com/ecmwf/eccodes) packaged in a Docker container to allow for easy processing of GRIB2 and BUFR files.
 
-[![Python Version](https://img.shields.io/badge/python-3.7.7-informational)](https://hub.docker.com/_/python)
+[![Python Version](https://img.shields.io/badge/python-3.7.8-informational)](https://hub.docker.com/_/python)
 [![ecCodes Version](https://img.shields.io/badge/ecCodes-2.18.0-informational)](https://github.com/ecmwf/eccodes)
 [![ecCodes-Python Version](https://img.shields.io/static/v1?label=eccodes-python&message=0.9.8&color=informational)](https://github.com/ecmwf/eccodes-python)
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/deutscherwetterdienst/python-eccodes.svg)](https://hub.docker.com/r/deutscherwetterdienst/python-eccodes)
