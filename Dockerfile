@@ -117,6 +117,18 @@ RUN set -ex \
     && pip install -e . \
     && python builder.py
 
+# Download and unpack DWD GRIB tables for ecCodes
+ARG DWD_GRIB_DEFINITIONS_VERSION=2.12.5-2
+RUN set -ex \
+    && mkdir -p /dwd/ \
+    && cd /dwd/ \
+    && wget -O dwd_eccodes_definitions.tar.gz https://opendata.dwd.de/weather/lib/grib/eccodes_definitions.edzw-${DWD_GRIB_DEFINITIONS_VERSION}.tar.gz \
+    && tar -xvf dwd_eccodes_definitions.tar.gz \
+    && mv definitions.edzw-${DWD_GRIB_DEFINITIONS_VERSION} /usr/local/share/eccodes/
+
+# Configure ecCodes to use DWD's GRIB definitions
+ENV ECCODES_DEFINITION_PATH=/usr/local/share/eccodes/definitions.edzw-${DWD_GRIB_DEFINITIONS_VERSION}:/usr/local/share/eccodes/definitions/
+
 # Remove unneeded files.
 RUN set -ex \
     && find /usr/local -name 'lib*.so' | xargs -r -- strip --strip-unneeded || true \
@@ -130,7 +142,7 @@ FROM debian:stable-slim
 
 # Install run-time depencencies.
 # Delete resources after installation
- RUN set -ex \
+RUN set -ex \
      && apt-get update \
      && apt-get install --yes --no-install-suggests --no-install-recommends \
          libopenjp2-7-dev \
@@ -145,6 +157,10 @@ COPY --from=build /src/eccodes-python/ /src/eccodes-python/
 # Ensure shared libs installed by the previous step are available.
 RUN set -ex \
     && /sbin/ldconfig
+
+# Configure ecCodes to use DWD's GRIB definitions
+ARG DWD_GRIB_DEFINITIONS_VERSION=2.12.5-2
+ENV ECCODES_DEFINITION_PATH=/usr/local/share/eccodes/definitions.edzw-${DWD_GRIB_DEFINITIONS_VERSION}:/usr/local/share/eccodes/definitions/
 
 # Configure Python runtime.
 ENV \
