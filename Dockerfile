@@ -143,10 +143,13 @@ FROM debian:stable-slim
 # Install run-time depencencies.
 # Delete resources after installation
 RUN set -ex \
-     && apt-get update \
-     && apt-get install --yes --no-install-suggests --no-install-recommends \
-         libopenjp2-7-dev \
-     && rm -rf /var/lib/apt/lists/*
+    && apt-get update \
+    && apt-get install --yes --no-install-suggests --no-install-recommends \
+        libopenjp2-7-dev \
+        libexpat1 \
+        libaec0 \
+        python3-openssl \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy Python run-time and ECMWF softwate.
 COPY --from=build /usr/local/share/eccodes/ /usr/local/share/eccodes/
