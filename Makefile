@@ -2,6 +2,7 @@ SHELL := /bin/bash
 
 # test
 TEST_CMD := python -m eccodes selfcheck
+TEST2_CMD := grib_ls /samples/icon_global.grib2
 
 # load variables from ./hooks/env
 DATE := ${shell . ./hooks/env && echo $$DATE}
@@ -27,6 +28,7 @@ run-interactive:
 
 test:
 	@docker run --rm -i -t ${IMAGE_NAME} ${TEST_CMD}
+	@docker run --rm -i -t ${IMAGE_NAME} ${TEST2_CMD}
 
 login:
 	@docker login
