@@ -5,10 +5,10 @@
 
 [ -n "$SOURCE_URL" ]        || SOURCE_URL=https://github.com/deutscherwetterdienst/python-eccodes
 [ -n "$DOCKER_REPO" ]       || DOCKER_REPO=deutscherwetterdienst/python-eccodes
-[ -n "$ECBUILD_VERSION" ]    || ECBUILD_VERSION="3.3.5"
-[ -n "$ECCODES_VERSION" ]    || ECCODES_VERSION="2.18.0"
-[ -n "$DWD_GRIB_DEFINITIONS_VERSION" ]    || DWD_GRIB_DEFINITIONS_VERSION="2.14.1-1"
-[ -n "$PYTHON_ECCODES_VERSION" ]    || PYTHON_ECCODES_VERSION="0.9.9"
+[ -n "$ECBUILD_VERSION" ]    || ECBUILD_VERSION="3.4.1"
+[ -n "$ECCODES_VERSION" ]    || ECCODES_VERSION="2.19.1"
+[ -n "$DWD_GRIB_DEFINITIONS_VERSION" ]    || DWD_GRIB_DEFINITIONS_VERSION="2.19.0-1"
+[ -n "$PYTHON_ECCODES_VERSION" ]    || PYTHON_ECCODES_VERSION="1.0.0"
 [ -n "$PYTHON_VERSION" ]    || PYTHON_VERSION="3.7.9"
 
 [ -n "$SOURCE_BRANCH" ]  || SOURCE_BRANCH=$(git symbolic-ref -q --short HEAD)
